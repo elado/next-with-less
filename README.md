@@ -2,6 +2,8 @@
 
 > [Next.js](https://nextjs.org/) + [Less CSS](https://lesscss.org/) Support
 
+**_Hopefully this plugin will be unnecessary soon - when https://github.com/vercel/next.js/pull/23185 merges_**
+
 Next.js supports SASS/SCSS, but not Less. This plugin adds Less support by duplicating SASS webpack rules and adding support for `.less` files with `less-loader`.
 It mimics the exact behavior of CSS extraction/css-modules/errors/client/server of SASS.
 
