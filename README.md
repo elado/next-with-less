@@ -9,7 +9,7 @@ It mimics the exact behavior of CSS extraction/css-modules/errors/client/server 
 
 ⚠️ _**Use with caution - Next.js implementation can chance in any version, and the monkey patching may not work anymore.**_
 
-Tested with `next@10.1.3` and `next@10.2` with `webpack@5`, and `antd@4.15.x`.
+Tested with `next@10.1.3`/`next@10.2` with `webpack@5`, and `antd@4.15.x`.
 
 ## Install
 
