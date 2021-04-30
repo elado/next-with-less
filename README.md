@@ -103,7 +103,7 @@ and then pass it to `less-loader` using `additionalData`:
 const withLess = require("next-with-less");
 const path = require("path");
 
-const pathToLessFileWithVariables = path.resolve('your-file-with-antd-variables.less')
+const pathToLessFileWithVariables = path.resolve("your-file-with-antd-variables.less")
 
 module.exports = withLess({
   future: {
