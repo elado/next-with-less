@@ -38,6 +38,8 @@ module.exports = withLess({
 });
 ```
 
+You can see all the options available to `less-loader` [here](https://webpack.js.org/loaders/less-loader/#options).
+
 ### Usage with [`next-compose-plugins`](https://github.com/cyrilwanner/next-compose-plugins)
 
 ```js
@@ -85,6 +87,32 @@ module.exports = withLess({
         /* ... */
       },
     },
+  },
+});
+```
+
+As an alternative, the same can be achieved using the `additionalData` option. 
+Put your variables in a file, like:
+```less
+@primary-color: #9900FF;
+@border-radius-base: 2px;
+```
+and then pass it to `less-loader` using `additionalData`: 
+```js
+// next.config.js
+const withLess = require("next-with-less");
+const path = require("path");
+
+const pathToLessFileWithVariables = path.resolve('your-file-with-antd-variables.less')
+
+module.exports = withLess({
+  future: {
+    webpack5: true,
+  },
+
+  lessLoaderOptions: {
+    /* ... */
+    additionalData: content =>`${content}\n\n@import '${pathToLessFileWithVariables}';`,
   },
 });
 ```
