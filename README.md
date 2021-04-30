@@ -32,7 +32,7 @@ module.exports = withLess({
     webpack5: true,
   },
 
-  lessOptions: {
+  lessLoaderOptions: {
     /* ... */
   },
 });
@@ -49,7 +49,7 @@ const withLess = require("next-with-less");
 const plugins = [
   withLess,
   {
-    lessOptions: {
+    lessLoaderOptions: {
       /* ... */
     },
   },
@@ -58,6 +58,33 @@ const plugins = [
 module.exports = withPlugins(plugins, {
   future: {
     webpack5: true,
+  },
+});
+```
+
+### Customize `antd` theme
+
+To override some of `antd` [default variables](https://ant.design/docs/react/customize-theme), just add them under `lessLoaderOptions.lessOptions.modifyVars`:
+
+```js
+// next.config.js
+const withLess = require("next-with-less");
+
+module.exports = withLess({
+  future: {
+    webpack5: true,
+  },
+
+  lessLoaderOptions: {
+    /* ... */
+    lessOptions: {
+      /* ... */
+      modifyVars: {
+        'primary-color': '#9900FF',
+        'border-radius-base': '2px',
+        /* ... */
+      },
+    },
   },
 });
 ```

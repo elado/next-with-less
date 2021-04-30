@@ -4,7 +4,7 @@ const cloneDeep = require("clone-deep");
 // it mimics the exact behavior of CSS extraction/modules/client/server of SASS
 // tested on next 10.1.3 with webpack5
 
-function withLess({ lessOptions, ...nextConfig }) {
+function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
   return Object.assign({}, nextConfig, {
     webpack(config, opts) {
       // there are 2 relevant sass rules in next.js - css modules and global css
@@ -46,9 +46,10 @@ function withLess({ lessOptions, ...nextConfig }) {
       const lessLoader = {
         loader: "less-loader",
         options: {
+          ...lessLoaderOptions,
           lessOptions: {
             javascriptEnabled: true,
-            ...lessOptions,
+            ...lessLoaderOptions.lessOptions,
           },
         },
       };
