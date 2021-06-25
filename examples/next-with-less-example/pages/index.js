@@ -10,7 +10,16 @@ export default function Home() {
       <Head>
         <title>Next.js + Less CSS</title>
       </Head>
+
       <h1 className={stylesLess.title}>Next.js + Less CSS</h1>
+
+      <div>
+        <p>Support for CSS: <span className="css-supported"></span></p>
+        <p>Support for CSS images: <span className="css-image-supported"></span></p>
+        
+        <p>Support for LESS: <span className="less-supported"></span></p>
+        <p>Support for LESS images: <span className="less-image-supported"></span></p>
+      </div>
 
       <Tooltip title="Example AntD Tooltip">
         <Button type="primary" icon={<SearchOutlined />}>
