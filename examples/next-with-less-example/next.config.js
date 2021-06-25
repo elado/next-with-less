@@ -1,12 +1,9 @@
-// outside of this repo, this should be:
+// the following 2 lines are specific to this repo. in your project use next-with-less directly
 // const withLess = require("next-with-less");
 const withLess = require("../../src");
+withLess.patchNext(require("next/dist/build/webpack/config/blocks/css"));
 
 module.exports = withLess({
-  future: {
-    webpack5: true,
-  },
-
   lessLoaderOptions: {
     // it's possible to use additionalData or modifyVars for antd theming
     // read more @ https://ant.design/docs/react/customize-theme

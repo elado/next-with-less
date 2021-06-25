@@ -1,9 +1,18 @@
 @content-color: #dc4bc6;
 
-body::after {
-  position: fixed;
-  right: 0;
-  top: 0;
+@import "~antd/lib/style/themes/default.less";
+
+.less-supported::after {
   color: @content-color;
-  content: "(less is supported!)";
+  content: "✅ Yes";
+}
+
+.less-image-supported {
+  background: url(./check.svg);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }

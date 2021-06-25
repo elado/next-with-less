@@ -2,7 +2,20 @@ const cloneDeep = require("clone-deep");
 
 // this plugin finds next.js's sass rules and duplicates them with less
 // it mimics the exact behavior of CSS extraction/modules/client/server of SASS
-// tested on next 10.1.3 with webpack5
+// tested on next@11.0.1 with webpack@5
+
+const addLessToRegExp = (rx) =>
+  new RegExp(rx.source.replace("|sass", "|sass|less"), rx.flags);
+
+function patchNextCSSWithLess(nextCSSModule = require("next/dist/build/webpack/config/blocks/css")) {
+  // monkey patch next's regexLikeCss to include less files
+  // overrides https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack/config/blocks/css/index.ts#L17
+  // so https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack-config.ts#L54
+  // has less extension as well
+  nextCSSModule.regexLikeCss = addLessToRegExp(nextCSSModule.regexLikeCss);
+}
+
+patchNextCSSWithLess();
 
 function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
   return Object.assign({}, nextConfig, {
@@ -15,9 +28,6 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
       const cssRule = config.module.rules.find(
         (rule) => rule.oneOf?.[0]?.options?.__next_css_remove
       );
-
-      const addLessToRegExp = (rx) =>
-        new RegExp(rx.source.replace("|sass", "|sass|less"), rx.flags);
 
       const addLessToRuleTest = (test) => {
         if (Array.isArray(test)) {
@@ -89,3 +99,4 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
 }
 
 module.exports = withLess;
+module.exports.patchNext = patchNextCSSWithLess;

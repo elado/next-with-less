@@ -1,6 +1,13 @@
-body::before {
-  position: fixed;
-  left: 0;
-  top: 0;
-  content: "(css is supported!)";
+.css-supported::after {
+  content: "✅ Yes";
+}
+
+.css-image-supported {
+  background: url(./check.svg);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
