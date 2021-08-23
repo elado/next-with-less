@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.1
+- Updated README 
+
 ## 1.0.0
 - Added support for Next 11
 
