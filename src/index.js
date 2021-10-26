@@ -26,7 +26,7 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
       let sassGlobalRule;
 
       const cssRule = config.module.rules.find(
-        (rule) => rule.oneOf?.[0]?.options?.__next_css_remove
+        (rule) => rule.oneOf?.find(r => r?.options?.__next_css_remove)
       );
 
       const addLessToRuleTest = (test) => {
