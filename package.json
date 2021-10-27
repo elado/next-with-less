@@ -26,8 +26,8 @@
     "next": ">= 11.0.1"
   },
   "files": [
-    "index.js",
-    "dist"
+    "/index.js",
+    "/dist"
   ],
   "packageManager": "yarn@3.1.0"
 }
