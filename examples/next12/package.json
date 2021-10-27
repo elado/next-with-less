@@ -1,0 +1,23 @@
+{
+  "name": "example-next12",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "antd": "^4.16.5",
+    "next": "12.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7",
+    "eslint-config-next": "12.0.1",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.0"
+  }
+}
