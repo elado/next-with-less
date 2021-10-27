@@ -7,7 +7,9 @@ const cloneDeep = require("clone-deep");
 const addLessToRegExp = (rx) =>
   new RegExp(rx.source.replace("|sass", "|sass|less"), rx.flags);
 
-function patchNextCSSWithLess(nextCSSModule = require("next/dist/build/webpack/config/blocks/css")) {
+function patchNextCSSWithLess(
+  nextCSSModule = require("next/dist/build/webpack/config/blocks/css")
+) {
   // monkey patch next's regexLikeCss to include less files
   // overrides https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack/config/blocks/css/index.ts#L17
   // so https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack-config.ts#L54
@@ -25,8 +27,8 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
       // global sass rule (does not exist in server builds)
       let sassGlobalRule;
 
-      const cssRule = config.module.rules.find(
-        (rule) => rule.oneOf?.find(r => r?.options?.__next_css_remove)
+      const cssRule = config.module.rules.find((rule) =>
+        rule.oneOf?.find((r) => r?.options?.__next_css_remove)
       );
 
       const addLessToRuleTest = (test) => {
@@ -43,6 +45,10 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
         if (rule.use?.loader === "error-loader") {
           rule.test = addLessToRuleTest(rule.test);
         } else if (rule.use?.loader?.includes("file-loader")) {
+          // url() inside .less files - next <= 11
+          rule.issuer = addLessToRuleTest(rule.issuer);
+        } else if (rule.type === "asset/resource") {
+          // url() inside .less files - next >= 12
           rule.issuer = addLessToRuleTest(rule.issuer);
         } else if (rule.use?.includes?.("ignore-loader")) {
           rule.test = addLessToRuleTest(rule.test);
