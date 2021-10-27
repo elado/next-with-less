@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.0.2
+- Fix NPM published version
+
 ## 2.0.1
 - Updated README 
 
