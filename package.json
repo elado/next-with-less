@@ -1,6 +1,6 @@
 {
   "name": "next-with-less",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Next.js + Less CSS Support",
   "main": "index.js",
   "repository": "https://github.com/elado/next-with-less",
@@ -11,11 +11,11 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.13.16",
-    "@babel/preset-env": "^7.13.15",
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "next": "^11.0.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.4.1"
   },
   "dependencies": {
     "clone-deep": "^4.0.1"

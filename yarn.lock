@@ -5,7 +5,7 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"@babel/cli@npm:^7.13.16":
+"@babel/cli@npm:^7.15.7":
   version: 7.15.7
   resolution: "@babel/cli@npm:7.15.7"
   dependencies:
@@ -57,7 +57,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.13.16":
+"@babel/core@npm:^7.15.8":
   version: 7.15.8
   resolution: "@babel/core@npm:7.15.8"
   dependencies:
@@ -1107,7 +1107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.13.15":
+"@babel/preset-env@npm:^7.15.8":
   version: 7.15.8
   resolution: "@babel/preset-env@npm:7.15.8"
   dependencies:
@@ -3450,12 +3450,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "next-with-less@workspace:."
   dependencies:
-    "@babel/cli": ^7.13.16
-    "@babel/core": ^7.13.16
-    "@babel/preset-env": ^7.13.15
+    "@babel/cli": ^7.15.7
+    "@babel/core": ^7.15.8
+    "@babel/preset-env": ^7.15.8
     clone-deep: ^4.0.1
     next: ^11.0.1
-    prettier: ^2.2.1
+    prettier: ^2.4.1
   peerDependencies:
     less: "*"
     less-loader: ">= 7.0.0"
@@ -3894,7 +3894,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.2.1":
+"prettier@npm:^2.4.1":
   version: 2.4.1
   resolution: "prettier@npm:2.4.1"
   bin:
