@@ -1,0 +1,22 @@
+{
+  "name": "example-next11",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.16.13",
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "less": "^4.1.1",
+    "less-loader": "^10.0.0"
+  },
+  "packageManager": "yarn@3.1.0"
+}

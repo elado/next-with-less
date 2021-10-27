@@ -1,0 +1,13 @@
+.css-supported::after {
+  content: "✅ Yes";
+}
+
+.css-image-supported {
+  background: url(./check.svg);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}

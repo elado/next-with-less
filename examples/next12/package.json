@@ -1,20 +1,25 @@
 {
-  "name": "next-with-less-example",
+  "name": "example-next12",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "antd": "^4.16.5",
-    "next": "11.0.1",
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.16.13",
+    "next": "12.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "eslint": "7",
+    "eslint-config-next": "12.0.1",
     "less": "^4.1.1",
     "less-loader": "^10.0.0"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }
