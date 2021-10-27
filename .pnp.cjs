@@ -40,7 +40,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:6aee909c265c2635c9bbb97f370daf6b23ef034e8c8af676d44398e902acbeb666ba57aba79d4e54bb31575e5f9a5bc575f686b685b20d97c16ee490322ff82d#npm:7.15.8"],
             ["clone-deep", "npm:4.0.1"],
             ["next", "virtual:6aee909c265c2635c9bbb97f370daf6b23ef034e8c8af676d44398e902acbeb666ba57aba79d4e54bb31575e5f9a5bc575f686b685b20d97c16ee490322ff82d#npm:11.1.2"],
-            ["prettier", "npm:2.4.1"]
+            ["prettier", "npm:2.4.1"],
+            ["rimraf", "npm:3.0.2"]
           ],
           "linkType": "SOFT",
         }]
@@ -4811,7 +4812,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-env", "virtual:6aee909c265c2635c9bbb97f370daf6b23ef034e8c8af676d44398e902acbeb666ba57aba79d4e54bb31575e5f9a5bc575f686b685b20d97c16ee490322ff82d#npm:7.15.8"],
             ["clone-deep", "npm:4.0.1"],
             ["next", "virtual:6aee909c265c2635c9bbb97f370daf6b23ef034e8c8af676d44398e902acbeb666ba57aba79d4e54bb31575e5f9a5bc575f686b685b20d97c16ee490322ff82d#npm:11.1.2"],
-            ["prettier", "npm:2.4.1"]
+            ["prettier", "npm:2.4.1"],
+            ["rimraf", "npm:3.0.2"]
           ],
           "linkType": "SOFT",
         }]

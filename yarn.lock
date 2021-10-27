@@ -3456,6 +3456,7 @@ __metadata:
     clone-deep: ^4.0.1
     next: ^11.0.1
     prettier: ^2.4.1
+    rimraf: ^3.0.2
   peerDependencies:
     less: "*"
     less-loader: ">= 7.0.0"
