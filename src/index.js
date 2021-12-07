@@ -21,15 +21,32 @@ patchNextCSSWithLess();
 
 function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
   return Object.assign({}, nextConfig, {
+    /**
+     * @param {import('webpack').Configuration} config
+     * @param {*} options
+     * @returns {import('webpack').Configuration}
+     */
     webpack(config, opts) {
       // there are 2 relevant sass rules in next.js - css modules and global css
       let sassModuleRule;
       // global sass rule (does not exist in server builds)
       let sassGlobalRule;
 
+      const isNextSpecialCSSRule = (rule) =>
+        // next >= 12.0.7
+        rule[Symbol.for("__next_css_remove")] ||
+        // next < 12.0.7
+        rule.options?.__next_css_remove;
+
       const cssRule = config.module.rules.find((rule) =>
-        rule.oneOf?.find((r) => r?.options?.__next_css_remove)
+        rule.oneOf?.find(isNextSpecialCSSRule)
       );
+
+      if (!cssRule) {
+        throw new Error(
+          "Could not find next.js css rule. Please ensure you are using a supported version of next.js"
+        );
+      }
 
       const addLessToRuleTest = (test) => {
         if (Array.isArray(test)) {

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.0.3
+- Support for `next@12.0.7`
+
 ## 2.0.2
 - Fix NPM published version
 
