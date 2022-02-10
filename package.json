@@ -1,6 +1,6 @@
 {
   "name": "next-with-less",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Next.js + Less CSS Support",
   "main": "index.js",
   "repository": "https://github.com/elado/next-with-less.git",
