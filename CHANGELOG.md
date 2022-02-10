@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.0.5
+- Update NPM page links.
+
 ## 2.0.4
 - Fix NPM published version
 
