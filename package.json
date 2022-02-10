@@ -3,7 +3,8 @@
   "version": "2.0.4",
   "description": "Next.js + Less CSS Support",
   "main": "index.js",
-  "repository": "https://github.com/elado/next-with-less",
+  "repository": "https://github.com/elado/next-with-less.git",
+  "homepage": "https://github.com/elado/next-with-less#readme",
   "author": "Elad Ossadon <elad@ossadon.com>",
   "license": "MIT",
   "scripts": {
