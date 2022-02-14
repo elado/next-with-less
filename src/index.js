@@ -14,7 +14,7 @@ function patchNextCSSWithLess(
   // overrides https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack/config/blocks/css/index.ts#L17
   // so https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack-config.ts#L54
   // has less extension as well
-  nextCSSModule.regexLikeCss = addLessToRegExp(nextCSSModule.regexLikeCss);
+  nextCSSModule.regexLikeCss = addLessToRegExp(nextCSSModule.regexLikeCss || /\.(css|scss|sass)$/);
 }
 
 patchNextCSSWithLess();
