@@ -1,3 +1,4 @@
+const path = require("path");
 const cloneDeep = require("clone-deep");
 
 // this plugin finds next.js's sass rules and duplicates them with less
@@ -93,6 +94,15 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
         rule.test = new RegExp(rule.test.source.replace("(scss|sass)", "less"));
         // replace sass-loader (last entry) with less-loader
         rule.use.splice(-1, 1, lessLoader);
+
+        // Find css-loader and insert fix-relative-urls-loader after it
+        const cssLoaderIndex = rule.use.findIndex((moduleLoader) => moduleLoader?.loader && moduleLoader.loader.includes('\\css-loader'));
+        if (cssLoaderIndex > 0) {
+          rule.use.splice(cssLoaderIndex, 0, {
+            loader: path.resolve(__dirname, './../lib/fix-relative-urls-loader.js'),
+            options: {},
+          });
+        }
       };
 
       configureLessRule(lessModuleRule);
