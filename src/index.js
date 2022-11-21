@@ -19,7 +19,7 @@ function patchNextCSSWithLess(
 
 patchNextCSSWithLess();
 
-function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
+function withLess({ lessLoaderOptions = {}, cssLoaderOptions = {}, ...nextConfig }) {
   return Object.assign({}, nextConfig, {
     /**
      * @param {import('webpack').Configuration} config
@@ -73,6 +73,21 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
           sassModuleRule = rule;
         } else if (rule.test?.source === "(?<!\\.module)\\.(scss|sass)$") {
           sassGlobalRule = rule;
+        } 
+        
+        if(Array.isArray(rule.use)) {
+          rule.use.forEach(moduleLoader => {
+            if(
+              moduleLoader.loader &&
+              moduleLoader.loader.includes('css-loader') &&
+              typeof moduleLoader.options?.modules === 'object'
+            ) {
+              moduleLoader.options.modules = {
+                ...moduleLoader.options.modules,
+                ...cssLoaderOptions
+              }
+            }
+          })
         }
       });
 

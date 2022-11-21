@@ -29,10 +29,14 @@ module.exports = withLess({
   lessLoaderOptions: {
     /* ... */
   },
+  cssLoaderOptions: {
+    mode: 'pure',
+    /* ... */
+  }
 });
 ```
 
-You can see all the options available to `less-loader` [here](https://webpack.js.org/loaders/less-loader/#options).
+You can see all the options available to `less-loader` [here](https://webpack.js.org/loaders/less-loader/#options), and you can see all the options available to `cssLoaderOptions` [here](https://github.com/webpack-contrib/css-loader#modules).
 
 ### Usage with [`next-compose-plugins`](https://github.com/cyrilwanner/next-compose-plugins)
 
