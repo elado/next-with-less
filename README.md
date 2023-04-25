@@ -5,7 +5,7 @@
 Next.js supports SASS/SCSS, but not Less. This plugin adds Less support by duplicating SASS webpack rules and adding support for `.less` files with `less-loader`.
 It mimics the exact behavior of CSS extraction/css-modules/errors/client/server of SASS.
 
-⚠️ _**Use with caution - Next.js implementation can chance in any version, and the monkey patching may not work anymore.**_
+⚠️ _**Use with caution - Next.js implementation can change in any version, and the monkey patching may not work anymore.**_
 
 Tested with `next@11.0.1` (with webpack5), `next@12.0.7`, and `antd@4.15.x`.
 

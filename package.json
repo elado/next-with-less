@@ -32,5 +32,5 @@
     "/index.js",
     "/dist"
   ],
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.5.0"
 }

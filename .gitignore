@@ -3,3 +3,6 @@ node_modules
 dist
 .yarn
 !.yarn/releases
+
+.pnp.cjs
+.pnp.loader.mjs
