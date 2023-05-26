@@ -7,12 +7,12 @@ It mimics the exact behavior of CSS extraction/css-modules/errors/client/server 
 
 ⚠️ _**Use with caution - Next.js implementation can change in any version, and the monkey patching may not work anymore.**_
 
-Compatiblilty:
+## Install
+
+### Compatiblilty:
 
 * Next 11, 12 -> v2.x
 * Next 13.3+ -> v3.x
-
-## Install
 
 ```sh
 yarn add next-with-less
