@@ -7,18 +7,6 @@ const cloneDeep = require("clone-deep");
 const addLessToRegExp = (rx) =>
   new RegExp(rx.source.replace("|sass", "|sass|less"), rx.flags);
 
-function patchNextCSSWithLess(
-  nextCSSModule = require("next/dist/build/webpack/config/blocks/css")
-) {
-  // monkey patch next's regexLikeCss to include less files
-  // overrides https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack/config/blocks/css/index.ts#L17
-  // so https://github.com/vercel/next.js/blob/e8a9bd19967c9f78575faa7d38e90a1270ffa519/packages/next/build/webpack-config.ts#L54
-  // has less extension as well
-  nextCSSModule.regexLikeCss = addLessToRegExp(nextCSSModule.regexLikeCss);
-}
-
-patchNextCSSWithLess();
-
 function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
   return Object.assign({}, nextConfig, {
     /**
@@ -46,6 +34,14 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
         throw new Error(
           "Could not find next.js css rule. Please ensure you are using a supported version of next.js"
         );
+      }
+
+      const imageRule = config.module.rules.find(
+        (rule) => rule.loader === "next-image-loader"
+      );
+
+      if (imageRule) {
+        imageRule.issuer.not = addLessToRegExp(imageRule.issuer.not);
       }
 
       const addLessToRuleTest = (test) => {
@@ -122,4 +118,3 @@ function withLess({ lessLoaderOptions = {}, ...nextConfig }) {
 }
 
 module.exports = withLess;
-module.exports.patchNext = patchNextCSSWithLess;
