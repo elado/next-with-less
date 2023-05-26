@@ -15,10 +15,10 @@ export default function Home() {
 
       <div>
         <p>Support for CSS: <span className="css-supported"></span></p>
-        <p>Support for CSS images: <span className="css-image-supported"></span></p>
+        <p>Support for images <code>url(./img.png)</code> in CSS files: <span className="css-image-supported"></span></p>
         
         <p>Support for LESS: <span className="less-supported"></span></p>
-        <p>Support for LESS images: <span className="less-image-supported"></span></p>
+        <p>Support for images <code>url(./img.png)</code> in LESS files: <span className="less-image-supported"></span></p>
       </div>
 
       <Tooltip title="Example AntD Tooltip">

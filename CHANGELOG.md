@@ -1,5 +1,13 @@
 # CHANGELOG
 
+
+## 3.0.0
+- Drop support for Next < 13 (use v2)
+- Fix compatibility with Next 13.4
+
+## 2.0.6
+- Fix Next 13.x compatibility
+
 ## 2.0.5
 - Update NPM page links.
 
