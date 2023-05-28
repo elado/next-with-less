@@ -9,8 +9,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && babel src -d dist",
-    "prepare": "npm run build",
-    "prepublish": "npm run build"
+    "prepare": "yarn build",
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
