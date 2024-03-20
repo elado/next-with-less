@@ -13,6 +13,7 @@ It mimics the exact behavior of CSS extraction/css-modules/errors/client/server 
 
 * Next 11, 12 -> v2.x
 * Next 13.3+ -> v3.x
+* Next 14.0+
 
 ```sh
 yarn add next-with-less
